@@ -141,14 +141,17 @@ public getJSONData(): Promise<any[]> {
 
   `
   return (
-    <>
+    
+    <div className='app__container' id="uml">
        <h2 className='bold-text'>Documentaion and UML Diagrams</h2>
       <p className='p-text'>
       Documentation is an important part of programming in terms of understanding and communicating the program. It is basically comments that explain the functionality of the program and how it works. It helps viewers or co-workers easily understand the program rather than having to understand line by line. When in a team setting, documentation is important to increase efficiency within the workplace and reduce time wasted trying to understand the code. The documentation should be clear and concise to clearly communicate the functionality.  A good thing to note is that every coding language has its own unique documentation. A good example of documentation would be the Ranking class as it explains its functionality and the getJsonData method in the FileEditor Class.
       The Ranking class' attributes, methods are documented based on their purpose and functionality. The same goes to the getJsonData() method in the FileEditor class. Its purpose being to create multiple json object to store them in an array. The method's parameter and return value are also documented to ensure that the user know the data type and what to input and what to expect as a return value. 
       </p>
 
-      <CopyBlock
+      <div className='app__code-block'> 
+    
+    <CopyBlock
   text={documentation}
   language={'typescript'}
   showLineNumbers={true}
@@ -157,7 +160,7 @@ public getJSONData(): Promise<any[]> {
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(documentation)}
-/>
+/></div>
 
 <h4 className='bold-text'>UML Diagrams</h4>
 <p className='p-text'>are diagrams that are used to represent classes along with their attributes, methods, and their properties. They are important for program planning. They make the planning section of a project much easier and organized which increases efficiency. It is a better alternative than planning classes on a text editor or while you are in production. For Classes, they are represented by a rectangle that is divided into three sections:
@@ -190,7 +193,7 @@ I have two seperate examples to represent both attributes and methods.
 <p className='p-text'>An example of method overriding is in the CSVEditor child class when it overrid the getJsonData() methods in the FileEditor() Parent class. 
 </p>
 <img src={FileEditorInheritance} alt="File Editor Inheritance" />
-    </>
+</div>
   )
 }
 

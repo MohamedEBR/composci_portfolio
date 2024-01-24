@@ -163,7 +163,7 @@ export class CSVEditor extends FileEditor {
 }
 `
   return (
-    <>
+    <div className='app__container' id="inheritance">
     <h2 className='bold-text'>Inheritance</h2>
       <p className='p-text'>
       Inheritance is a mechanism in object-oriented programming where a new class, known as a child class, derives the properties (attributes) and behaviors (methods) of another class, referred to as a parent class or base class.
@@ -171,21 +171,20 @@ It enhances code reusability by allowing child class to use and extend the funct
       </p>
 
       <h4 className='bold-text'>Child Classes and Parent Classes</h4>
-      <p className='p-text'>child classes: These inherit attributes and methods from the parent class. They can also have additional unique attributes and methods or override methods from the parent class to provide specialized behavior.</p>     <br/>
-      <p className='p-text'>parent class: The original class from which child classes inherit. It provides common attributes and methods to its child classes.</p>
+      <p className='p-text'>Child classes: These inherit attributes and methods from the parent class. They can also have additional unique attributes and methods or override methods from the parent class to provide specialized behavior. <br/> Parent class: The original class from which child classes inherit. It provides common attributes and methods to its child classes.</p>
       
 
       <h4 className='bold-text'>Attribute Adding in child class</h4>
       <p className='p-text'>child classes can introduce new attributes that are specific to them, extending the class functionality.
-These attributes are used to define properties that are relevant only to the child class, making the child class more specific and detailed.</p>     <br/>
-    
-<p className='p-text'>For example, the 'Ranking' parent class and 'Clubs' child classes. The 'Ranking' parent class started out with the  rank: number,
+These attributes are used to define properties that are relevant only to the child class, making the child class more specific and detailed. <br /> <br/> For example, the 'Ranking' parent class and 'Clubs' child classes. The 'Ranking' parent class started out with the  rank: number,
     name,
     off,
     def,
     spi, attributes. In the child class, 'CLubs', super() is used to call the constructor of the Ranking class to ensure that all the original attributes are initialized. The 'Clubs', has added two attributes being prev_rank and league to differentiate itself from the parent class and provides it's object with unique properties.</p>    
     
-<CopyBlock
+    <div className='app__code-block'> 
+    
+    <CopyBlock
   text={attributeAdding}
   language={'typescript'}
   showLineNumbers={true}
@@ -194,15 +193,17 @@ These attributes are used to define properties that are relevant only to the chi
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(attributeAdding)}
-/>
+/></div>
 
-<br/>
+
 <h4 className='bold-text'>Method Overriding</h4>
 <p className='p-text'>Method overriding occurs when a child class provides a specific implementation for a method that already exists in the parent class.
-The overriding method in the child class has the same name, return type, and parameters as the method in the parent class but implements the functionality differently.</p>     <br/>
+The overriding method in the child class has the same name, return type, and parameters as the method in the parent class but implements the functionality differently.</p>     
 
 <p className='p-text'>For example, the 'getDataByRank' method which originally exist in the 'FileEditor' parent class and is overridid in the 'CSVEditior' Child Class. The getDataByRank in the parent class is supposed to get an object based on an input from the json file. Firstly the medthod reads and parses the json file using the getter method this.getFilePath().This method reads the JSON data from the specified file path, parses it, and searches for an object
     with the specified rank. If found, the object is logged to the console; otherwise, null is returned. As you can see, this method only works for json files but not csv files. So in the CSVEditor child class, the method has been overrided to read and parse a csv file instead using different functionality.</p>    
+    
+    <div className='app__code-block'> 
     
     <CopyBlock
   text={methodOverriding}
@@ -213,8 +214,10 @@ The overriding method in the child class has the same name, return type, and par
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(methodOverriding)}
-/>
-    </>
+/></div>
+
+    </div>
+   
   )
 }
 

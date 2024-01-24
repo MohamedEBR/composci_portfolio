@@ -105,7 +105,7 @@ public binarySearchIterative(target: number): object | null {
     return null;
 }`
   return (
-    <>
+    <div className='app__container' id="recursion">
       <h2 className='bold-text'>Recursion</h2>
       <p className='p-text'>Recursion is a programming technique where a function calls itself to solve a problem. It's like breaking down a big task into smaller, similar tasks. Each time the function calls itself, it works on a smaller part of the problem, until it reaches a simple case that can be solved easily. This approach is useful for problems that can be divided into similar sub-problems, like sorting lists or searching through data structures. It's like solving a big puzzle by first solving smaller pieces of it.</p>
     
@@ -116,6 +116,7 @@ public binarySearchIterative(target: number): object | null {
     <p className='p-text'>'binarySearchRecursive' is the main function that initiates the binary search. It reads and parses the data from a JSON file, then calls binarySearchRecursiveAux with the initial parameters (the entire array, target value, and initial low and high indices).
 binarySearchRecursiveAux is the recursive function. It calculates the middle index of the current search range. If the target value is less than the value at the middle index, the function calls itself with a new range (lower half of the current range). If the target is more, it searches the upper half. This recursive division continues until the target is found or the range is invalid (low index greater than high index).</p>
 </p>
+<div>
 <CopyBlock
   text={binarySearchRecursive}
   language={'typescript'}
@@ -125,7 +126,7 @@ binarySearchRecursiveAux is the recursive function. It calculates the middle ind
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(binarySearchRecursive)}
-/>
+/></div>
 
 <h5 className='bold-text'>Non-recursive Binary search</h5>
     <p className='p-text'>The function reads and parses JSON data. It initializes low and high to define the search range and sets a counter count to zero. Then instead of calling itself recursively, this function uses a while loop to continue the search as long as low is less than or equal to high.
@@ -133,7 +134,8 @@ Then in each iteration, it calculates the midpoint and compares the rank at this
 If the target rank is greater, it searches the right half.
 If the rank matches, it logs the count of checks, runtime, and returns the object. The loop terminates when the target is found (returns the object) or when low exceeds high (returns null), indicating the target is not present.</p>
 
-<CopyBlock
+<div>
+  <CopyBlock
   text={binarySearchIterative}
   language={'typescript'}
   showLineNumbers={true}
@@ -142,8 +144,7 @@ If the rank matches, it logs the count of checks, runtime, and returns the objec
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(binarySearchIterative)}
-/>
-    </>
+/></div></div>
   )
 }
 

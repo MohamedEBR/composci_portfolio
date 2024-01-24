@@ -335,8 +335,8 @@ export class QuickSort {
     }
 }`
   return (
-      <>
-        <h2 className='bold-text'>Sorting Algortihms</h2>
+      <div className='app__container' id="sort">
+      <h2 className='bold-text'>Sorting Algortihms</h2>
       <p className='p-text'>
       Sorting Algorithms are important algorithms in programming to sort or arrange elements in a certain order. There are many sorting algorithms that vary in complexity, complexity and usability. Some are more useful than others in different situations. For example, Merge Sort, Quicksort, and Bubble Sort. 
       </p>
@@ -351,27 +351,21 @@ export class QuickSort {
     <li>
     As x increases f(x) increases proportionally.
     </li>
-    <li>
-      <img src={linear} alt="function" />
-    </li>
+      <img className="app__notation-img" src={linear} alt="function" />
   </ul>
   <li>O(n^2)-Quadratic</li>
   <ul>
     <li>
     As x increases f(x) increases at an accelerating rate (slope increases).
     </li>
-    <li>
-      <img src={quadratic} alt="function" />
-    </li>
+      <img className="app__notation-img" src={quadratic} alt="function" />
   </ul>
   <li>O(logn)-Logarithmic</li>
   <ul>
     <li>
     As x increases, y increases at a decelerating rate. 
     </li>
-    <li>
-      <img src={logarithmic} alt="function" />
-    </li>
+      <img className="app__notation-img" src={logarithmic} alt="function" />
   </ul>
 </ul>
 <li>O(nlogn)-Linearithmic</li>
@@ -380,9 +374,7 @@ export class QuickSort {
   As x increases, y increases quickly and then decelerates. 
   It is also good to note, the y values stays negative at the first values of x, before quickly rising up.
   </li>
-  <li>
-      <img src={Linearithmic} alt="function" />
-    </li>
+      <img className="app__notation-img" src={Linearithmic} alt="function" />
   </ul>
 
   <h4 className='bold-text'>Sorting Algortihms</h4>
@@ -403,8 +395,9 @@ export class QuickSort {
 </p>
     </li>
     </ul>  
-    <br/>
-
+   
+    <div className='app__code-block'> 
+    
     <CopyBlock
   text={bubbleSort}
   language={'typescript'}
@@ -414,7 +407,7 @@ export class QuickSort {
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(bubbleSort)}
-/>
+/></div>
 
     <h5 className='bold-text'>Merge Sort</h5>
   <ul>
@@ -434,6 +427,9 @@ Therefore O(nlogn). As the number of items increases, the amount of time acceler
     </li>
     </ul>  
 
+      
+    <div className='app__code-block'> 
+    
     <CopyBlock
   text={mergeSort}
   language={'typescript'}
@@ -443,7 +439,7 @@ Therefore O(nlogn). As the number of items increases, the amount of time acceler
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(mergeSort)}
-/>
+/></div>
     <h5 className='bold-text'>Quick sort</h5>
   <ul>
     <li>
@@ -457,14 +453,16 @@ Therefore O(nlogn). As the number of items increases, the amount of time acceler
     </li>
     <li>
     <p className='p-text'><span className='bold-text'>Explanation: </span> Best and Average Case: If the pivot is chosen well (e.g., it consistently divides the array into nearly equal parts), the height of the recursion tree is log(n), and we perform O(n) work at each level of the recursion. Hence, the best and average-case time complexity is O(n log n).
-<br/>Worst Case: In the worst case, where the pivot is the smallest or largest element (leading to very unbalanced partitions), the height of the recursion tree becomes n, and the time complexity degrades to O(n²). This situation occurs when the array is already sorted or nearly sorted, if the first or last element is always chosen as the pivot.
-<br/> As the size of the array increases, the time complexity of Quick Sort in the average case grows at a rate of n log(n), which is more efficient than O(n²) but not quite as optimal as O(n)
+Worst Case: In the worst case, where the pivot is the smallest or largest element (leading to very unbalanced partitions), the height of the recursion tree becomes n, and the time complexity degrades to O(n²). This situation occurs when the array is already sorted or nearly sorted, if the first or last element is always chosen as the pivot.
+As the size of the array increases, the time complexity of Quick Sort in the average case grows at a rate of n log(n), which is more efficient than O(n²) but not quite as optimal as O(n)
 
 
 </p>
     </li>
     </ul>  
-
+   
+    <div className='app__code-block'> 
+    
     <CopyBlock
   text={quickSort}
   language={'typescript'}
@@ -474,7 +472,7 @@ Therefore O(nlogn). As the number of items increases, the amount of time acceler
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(quickSort)}
-/>
+/></div>
 
   <h4 className='bold-text'>In summary</h4>
   <p className='p-text'>Bubble Sort is the least efficient in terms of time complexity, especially for larger datasets but works well with small datasets.
@@ -483,8 +481,9 @@ Merge Sort guarantees a stable and consistent O(n log n) performance irrespectiv
 </p>
 
 
+      </div>
+      
 
-      </>
     )
 }
 

@@ -93,8 +93,8 @@ private binarySearchRecursiveAux(arr, target: number, low: number, high: number,
 }
   `
   return (
-    <>
-        <h2 className='bold-text'>Searching Algorithms</h2>
+    <div className='app__container' id="search">
+    <h2 className='bold-text'>Searching Algorithms</h2>
         <p className='p-text'>
 Searching algorithms are methods for finding specific items in an array of things. They help you find specific data quickly and efficiently, like finding a club in a sports list. There are simple methods, like looking at each thing one by one, and more complex ones that work faster, especially when there's a lot to search through.
       </p>
@@ -118,6 +118,8 @@ Searching algorithms are methods for finding specific items in an array of thing
     </li>
     </ul>  
 
+    <div className='app__code-block'> 
+    
     <CopyBlock
   text={linearSearch}
   language={'typescript'}
@@ -127,7 +129,7 @@ Searching algorithms are methods for finding specific items in an array of thing
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(linearSearch)}
-/>
+/></div>
     <h5 className='bold-text'>Binary Search</h5>
   <ul>
     <li>
@@ -145,6 +147,8 @@ Searching algorithms are methods for finding specific items in an array of thing
 </p>
     </li>
     </ul>  
+    <div className='app__code-block'> 
+    
     <CopyBlock
   text={binarySearch}
   language={'typescript'}
@@ -154,7 +158,7 @@ Searching algorithms are methods for finding specific items in an array of thing
   codeBlock
   icon={<FaCopy />}
   onCopy={() => copy(binarySearch)}
-/>
+/></div>
     
 
 <h5 className='bold-text'>Efficiency Comparison</h5>
@@ -175,7 +179,7 @@ Searching algorithms are methods for finding specific items in an array of thing
     </li>
     </ul>  
 
-    </>
+    </div>
   )
 }
 

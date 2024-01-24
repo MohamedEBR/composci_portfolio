@@ -6,3 +6,4 @@ export {default as quadratic} from './quadratic.png'
 export {default as logarithmic} from './logarithmic.png'
 export {default as Linearithmic} from './linearithmic.png'
 
+export {default as background} from './background.png'
